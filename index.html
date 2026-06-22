@@ -49,7 +49,11 @@
           <span class="top-bar__text">0 (474) 502 44 36</span>
         </a>
         <span class="top-bar__divider"></span>
-        <span class="top-bar__badge">7/24 Acil Servis</span>
+        <span class="top-bar__badge" data-i18n="ui.emergency">7/24 Acil Servis</span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Dil seçimi">
+        <button type="button" class="lang-switch__btn active" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
       <div class="top-bar__right">
         <a href="https://api.whatsapp.com/send?phone=905322907036" target="_blank" rel="noopener" class="top-bar__link" aria-label="WhatsApp">
@@ -79,16 +83,19 @@
       </a>
       <nav class="nav" aria-label="Ana menü">
         <ul class="nav__list">
-          <li><a href="#hakkimizda" class="nav__link">Hakkımızda</a></li>
-          <li><a href="#birimler" class="nav__link">Birimler</a></li>
-          <li><a href="#doktorlar" class="nav__link">Doktorlar</a></li>
-          <li><a href="#haberler" class="nav__link">Haberler</a></li>
-          <li><a href="#iletisim" class="nav__link">İletişim</a></li>
+          <li><a href="#hakkimizda" class="nav__link" data-i18n="ui.nav.about">Hakkımızda</a></li>
+          <li><a href="#birimler" class="nav__link" data-i18n="ui.nav.depts">Birimler</a></li>
+          <li><a href="#doktorlar" class="nav__link" data-i18n="ui.nav.doctors">Doktorlar</a></li>
+          <li><a href="#haberler" class="nav__link" data-i18n="ui.nav.news">Haberler</a></li>
+          <li><a href="#iletisim" class="nav__link" data-i18n="ui.nav.contact">İletişim</a></li>
         </ul>
       </nav>
+      <button type="button" class="search-toggle" id="search-toggle" aria-label="Site içi arama">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
       <div class="header__actions">
-        <a href="http://195.175.92.206:3634/labsonuc/patient_information.php" target="_blank" rel="noopener" class="btn btn--outline header__cta-secondary">e-SONUÇ</a>
-        <a href="http://195.175.92.206:3634/randevu" target="_blank" rel="noopener" class="btn btn--primary header__cta">e-Randevu</a>
+        <a href="http://195.175.92.206:3634/labsonuc/patient_information.php" target="_blank" rel="noopener" class="btn btn--outline header__cta-secondary" data-i18n="ui.cta.esonuc">e-SONUÇ</a>
+        <a href="http://195.175.92.206:3634/randevu" target="_blank" rel="noopener" class="btn btn--primary header__cta" data-i18n="ui.cta.randevu">e-Randevu</a>
       </div>
       <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span>
@@ -121,6 +128,7 @@
       <a href="#iletisim" class="mobile-nav__link">İletişim</a>
     </nav>
     <div class="mobile-nav__footer">
+      <button type="button" class="btn btn--outline btn--block" id="mobile-search-btn" data-i18n="ui.search">Ara</button>
       <a href="tel:+904745024436" class="btn btn--outline btn--block">0 (474) 502 44 36</a>
       <a href="http://195.175.92.206:3634/labsonuc/patient_information.php" target="_blank" rel="noopener" class="btn btn--outline btn--block">e-SONUÇ</a>
       <a href="http://195.175.92.206:3634/randevu" target="_blank" rel="noopener" class="btn btn--primary btn--block">e-Randevu Al</a>
@@ -135,12 +143,12 @@
       </div>
       <div class="container hero__content">
         <div class="hero__text reveal">
-          <p class="eyebrow">Kars'ın ilk kapsamlı özel hastanesi</p>
-          <h1 class="hero__title">Sağlığınız için<br><em>hizmetinizdeyiz</em></h1>
-          <p class="hero__desc">7000 m² alanda, 9 katlı modern tesisimizde uluslararası standartlarda sağlık hizmeti sunuyoruz. Uzman hekim kadromuz ve otel konforundaki odalarımızla yanınızdayız.</p>
+          <p class="eyebrow" data-i18n="ui.hero.eyebrow">Kars'ın ilk kapsamlı özel hastanesi</p>
+          <h1 class="hero__title"><span data-i18n="ui.hero.title">Sağlığınız için</span><br><em data-i18n="ui.hero.titleEm">hizmetinizdeyiz</em></h1>
+          <p class="hero__desc" data-i18n="ui.hero.desc">7000 m² alanda, 9 katlı modern tesisimizde uluslararası standartlarda sağlık hizmeti sunuyoruz. Uzman hekim kadromuz ve otel konforundaki odalarımızla yanınızdayız.</p>
           <div class="hero__actions">
-            <a href="http://195.175.92.206:3634/randevu" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Randevu Al</a>
-            <a href="tel:+904745024436" class="btn btn--ghost btn--lg">Hemen Ara</a>
+            <a href="http://195.175.92.206:3634/randevu" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="ui.cta.appointment">Randevu Al</a>
+            <a href="tel:+904745024436" class="btn btn--ghost btn--lg" data-i18n="ui.cta.call">Hemen Ara</a>
           </div>
         </div>
         <div class="hero__cards reveal reveal--delay">
@@ -819,6 +827,21 @@
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
   </a>
 
+  <div class="search-overlay" id="search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site içi arama">
+    <div class="search-overlay__backdrop" id="search-backdrop"></div>
+    <div class="search-overlay__panel">
+      <div class="search-overlay__header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" class="search-overlay__input" autocomplete="off" data-i18n-placeholder="ui.searchPlaceholder" placeholder="Birim, doktor veya haber ara…">
+        <button type="button" class="search-overlay__close" id="search-close" aria-label="Kapat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <p class="search-overlay__hint" data-i18n="ui.searchHint">Birimler, doktorlar, haberler ve SSS içinde arayın</p>
+      <ul class="search-overlay__results" id="search-results"></ul>
+    </div>
+  </div>
+
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
     <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Kapat">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -828,8 +851,8 @@
 
   <div class="cookie-banner" id="cookie-banner" hidden>
     <div class="cookie-banner__inner container">
-      <p>Bu web sitesi, deneyiminizi iyileştirmek için çerezler kullanmaktadır. Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş olursunuz.</p>
-      <button type="button" class="btn btn--primary btn--sm" id="cookie-accept">Kabul Et</button>
+      <p data-i18n="ui.cookie.text">Bu web sitesi, deneyiminizi iyileştirmek için çerezler kullanmaktadır. Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş olursunuz.</p>
+      <button type="button" class="btn btn--primary btn--sm" id="cookie-accept" data-i18n="ui.cookie.accept">Kabul Et</button>
     </div>
   </div>
 
@@ -844,6 +867,8 @@
   </div>
 
   <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/news-content.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
