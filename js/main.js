@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+  const mobileNavClose = document.querySelector('.mobile-nav__close');
   const navLinks = document.querySelectorAll('.nav__link, .mobile-nav__link');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const doctorCards = document.querySelectorAll('.doctor-card');
@@ -16,6 +18,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const faqList = document.getElementById('faq-list');
 
   let lastFocus = null;
+  let scrollY = 0;
+  let menuOpen = false;
+  let modalOpen = false;
+
+  function lockScroll() {
+    scrollY = window.scrollY;
+    document.body.classList.add('scroll-locked');
+    document.body.style.top = `-${scrollY}px`;
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('scroll-locked');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
+  }
+
+  function updateScrollLock() {
+    if (menuOpen || modalOpen) lockScroll();
+    else unlockScroll();
+  }
 
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
@@ -26,25 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  function setMenuOpen(isOpen) {
+    menuOpen = isOpen;
+    menuToggle?.classList.toggle('active', isOpen);
+    mobileNav?.classList.toggle('open', isOpen);
+    mobileNavBackdrop?.classList.toggle('open', isOpen);
+    mobileNav?.setAttribute('aria-hidden', !isOpen);
+    mobileNavBackdrop?.setAttribute('aria-hidden', !isOpen);
+    menuToggle?.setAttribute('aria-expanded', isOpen);
+    updateScrollLock();
+  }
+
+  function closeMobileNav() {
+    setMenuOpen(false);
+  }
+
   menuToggle?.addEventListener('click', () => {
-    const isOpen = menuToggle.classList.toggle('active');
-    mobileNav.classList.toggle('open', isOpen);
-    mobileNav.setAttribute('aria-hidden', !isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    setMenuOpen(!menuOpen);
   });
+
+  mobileNavClose?.addEventListener('click', closeMobileNav);
+  mobileNavBackdrop?.addEventListener('click', closeMobileNav);
 
   mobileNav?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileNav);
   });
-
-  function closeMobileNav() {
-    menuToggle?.classList.remove('active');
-    mobileNav?.classList.remove('open');
-    mobileNav?.setAttribute('aria-hidden', 'true');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
 
   const sections = document.querySelectorAll('section[id]');
   const observerNav = new IntersectionObserver(entries => {
@@ -56,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-  }, { rootMargin: '-40% 0px -50% 0px' });
+  }, { rootMargin: '-35% 0px -55% 0px' });
 
   sections.forEach(section => observerNav.observe(section));
 
@@ -67,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
@@ -121,15 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
     modalContent.innerHTML = html;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    modalOpen = true;
+    updateScrollLock();
     modal.querySelector('.modal__close')?.focus();
   }
 
   function closeModal() {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
     modalContent.innerHTML = '';
+    modalOpen = false;
+    updateScrollLock();
     lastFocus?.focus();
   }
 
@@ -138,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal();
+    if (e.key !== 'Escape') return;
+    if (modalOpen) closeModal();
+    else if (menuOpen) closeMobileNav();
   });
 
   document.querySelectorAll('[data-dept]').forEach(btn => {
