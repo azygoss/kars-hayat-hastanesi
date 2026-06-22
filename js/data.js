@@ -89,7 +89,7 @@ const SITE_DATA = {
       title: 'Başhekim',
       image: 'assets/doctors/abdil-yilmaz.jpg',
       category: 'dahili',
-      bio: 'Hastanemizin başhekimi olarak sağlık hizmetlerinin koordinasyonunu yürütmekte ve kalite standartlarının sürdürülmesinden sorumludur.'
+      bio: 'Dr. Abdil Yılmaz, Özel Kars Hayat Hastanesi yönetim kurulu başkanı ve başhekimidir. Kamuda doktorluk görevinin yanı sıra Kars Sağlık Müdürlüğü görevinde de bulunmuştur. Sağlık hizmetlerinin koordinasyonunu yürütmekte ve kalite standartlarının sürdürülmesinden sorumludur.'
     },
     'haktan-ergin-bagis': {
       name: 'Op. Dr. Haktan Ergin BAĞIŞ',
@@ -97,14 +97,29 @@ const SITE_DATA = {
       image: 'assets/doctors/haktan-ergin-bagis.jpg',
       category: 'cerrahi',
       instagram: 'https://www.instagram.com/drhaktanerginbagis',
-      bio: 'KBB hastalıklarının tanı ve tedavisinde cerrahi ve medikal yöntemlerle hizmet vermektedir.'
+      bio: 'Kulak, burun ve boğaz hastalıklarının tanı ve tedavisinde cerrahi ve medikal yöntemlerle hizmet vermektedir.',
+      specialties: [
+        'Rinoplasti', 'Göz kapağı estetiği', 'Facelift', 'Temporal lift',
+        'Gamze estetiği', 'Bisektomi — yanak yağlarının alımı',
+        'Fonksiyonel burun ameliyatları (Rinoplasti, Septorinoplasti, SRP)',
+        'Burun orta bölmesinin düzeltilmesi (Septoplasti, SMR)',
+        'Horlama, Uyku Apnesi Cerrahisi (UPPP)',
+        'Ses telleri cerrahisi (Larengoskopi, MLS)',
+        'Orta kulak ameliyatı (Mastoidektomi, Timpanomastoidektomi)',
+        'Kulak önü tükrük bezi ameliyatı (Parotidektomi)'
+      ]
     },
     'esmahan-nida-kaplan': {
       name: 'Op. Dr. Esmahan Nida KAPLAN',
       title: 'Kadın Hastalıkları ve Doğum Uzmanı',
       image: 'assets/doctors/esmahan-nida-kaplan.jpg',
       category: 'cerrahi',
-      bio: 'Gebelik takibi, doğum ve jinekolojik cerrahi alanlarında uzmanlaşmıştır. 2. düzey obstetrik USG hizmeti sunmaktadır.'
+      bio: 'Gebelik takibi, doğum ve jinekolojik cerrahi alanlarında uzmanlaşmıştır. 2. düzey obstetrik USG hizmeti sunmaktadır.',
+      specialties: [
+        'Gebelik Takibi ve Doğum', 'Normal Doğum', 'Sezaryen',
+        'Jinekolojik Ameliyatlar', 'Genital Estetik', 'HPV',
+        'İnfertilite (Kısırlık)', 'Himenoplasti', 'Menopoz'
+      ]
     },
     'levent-ali-derman': {
       name: 'Uzm. Dr. Levent Ali Derman',
@@ -134,7 +149,12 @@ const SITE_DATA = {
       image: 'assets/doctors/mutlu-sahin.jpg',
       category: 'dahili',
       instagram: 'https://www.instagram.com/mutlu_shn36',
-      bio: 'Dahiliye bölümümüzün öncülüğünde iç hastalıklarının tanı, tedavi ve takibini yürütmektedir.'
+      bio: 'Dahiliye bölümümüzün öncülüğünde iç hastalıklarının tanı, tedavi ve takibini yürütmektedir.',
+      specialties: [
+        'Kapsamlı Dahiliye Muayenesi', 'Diyabet (Şeker Hastalığı) Takibi',
+        'Hipertansiyon (Tansiyon) Takibi', 'Mide ve Bağırsak Hastalıkları',
+        'Solunum Yolu Hastalıkları', 'Tiroid Bezi Hastalıkları'
+      ]
     },
     'selcuk-yasar': {
       name: 'Uzm. Dr. Selçuk YAŞAR',
@@ -222,8 +242,135 @@ const SITE_DATA = {
       title: 'Özel Kars Hayat Hastanesi ailesi',
       date: '2026-05-12',
       image: 'assets/news/hospital-family.jpg',
-      body: 'Alanında uzman 150\'den fazla çalışanımızla sağlığınız için 7/24 hizmetinizdeyiz. Modern tesisimiz ve hasta odaklı yaklaşımımızla Kars\'ın sağlık altyapısına yeni bir soluk getiriyoruz.'
+      body: 'Özel Kars Hayat Hastanesi ailesi olarak, teknolojik olarak en üst düzeyde donatılan hastanemiz, alanlarında profesyonel ve deneyimli uzman ekibiyle hizmetinize hazır. Alanında uzman 150\'den fazla çalışanımızla sağlığınız için 7/24 hizmetinizdeyiz.'
+    },
+    'cocuk': {
+      title: 'Çocuk Sağlığı ve Hastalıkları servisimiz hasta kabulüne başladı',
+      date: '2026-05-03',
+      image: 'assets/news/cocuk-hastakabulu.jpg',
+      body: 'Çocuk Sağlığı ve Hastalıkları Uzmanı Uzm. Dr. Erhan ZENCİR öncülüğünde çocuk sağlığı için bilgi, deneyim ve sevgiyle sizlerin yanınızdayız. Ailemizin en değerli varlığı olan çocuklarımızın sağlığı için 0-18 yaş arası büyüme-gelişim takibi, aşılama ve hastalık tedavisi hizmeti sunulmaktadır.'
+    },
+    'kbb': {
+      title: 'Kulak Burun Boğaz (KBB) servisimiz hasta kabulüne başladı',
+      date: '2026-05-05',
+      image: 'assets/news/kbb-hastakabulu.jpg',
+      body: 'Op. Dr. Haktan Ergin BAĞIŞ ve ekibi, Özel Kars Hayat Hastanesi çatısı altında kulak hastalıkları, burun ve sinüs hastalıkları, boğaz hastalıkları, işitme kaybı, tonsil ve geniz eti problemleri başta olmak üzere KBB alanında hizmet vermektedir.'
+    },
+    'yuksek-tansiyon': {
+      title: 'Yüksek tansiyon belirtileri nelerdir? Hipertansiyon nedir?',
+      date: '2026-05-01',
+      image: 'assets/news/yuksek-tansiyon.jpg',
+      body: 'Hipertansiyon, günümüzde modern yaşamın getirdiği stres ve beslenme alışkanlıklarıyla beraber sağlık gündeminin en üst sıralarında yer alan kritik bir konudur. Yüksek tansiyon genellikle belirti vermeden ilerler; düzenli kontrol ve erken tanı hayati önem taşır. Dahiliye bölümümüzde hipertansiyon takibi ve tedavisi yapılmaktadır.'
+    },
+    'migren': {
+      title: 'Migren nedir? Belirtileri, nedenleri ve tedavi yöntemleri',
+      date: '2026-05-02',
+      image: 'assets/news/migren.jpg',
+      body: 'Migren, dünya genelinde milyonlarca insanın yaşadığı, genellikle başın bir tarafında şiddetli ağrıya neden olan nörolojik bir hastalıktır. Bulantı, kusma, ışık ve ses hassasiyeti gibi belirtilerle seyreder. Nöroloji bölümümüzde migren tanı ve tedavisi yapılmaktadır.'
+    },
+    'dogum-programi': {
+      title: 'Kadın doğum programı',
+      date: '2026-05-03',
+      image: 'assets/news/dogum-programi.jpg',
+      body: 'Doğum programı, anne adaylarının hamilelik döneminden doğum sonrasına kadar ihtiyaç duydukları sağlık hizmetlerini kapsayan özel bir sağlık programıdır. Düzenli muayene, gebelik takibi, doğum planlaması ve doğum sonrası bakım hizmetleri Op. Dr. Esmahan Nida Kaplan öncülüğünde sunulmaktadır.'
     }
+  },
+
+  partners: [
+    { name: 'SGK', image: 'assets/partners/sgk.jpg' },
+    { name: 'Tarım-İş Sendikası', image: 'assets/partners/tarim-is.png' },
+    { name: 'Türkiye Sigorta', image: 'assets/partners/turkiye-sigorta.png' },
+    { name: 'Anadolu Sigorta', image: 'assets/partners/anadolu.png' },
+    { name: 'Allianz Sigorta', image: 'assets/partners/allianz.png' },
+    { name: 'AXA Sigorta', image: 'assets/partners/axa.png' },
+    { name: 'Türkiye Hayat Emeklilik', image: 'assets/partners/tzh.png' },
+    { name: 'Ziraat Bankası', image: 'assets/partners/ziraat.png' },
+    { name: 'Halkbank', image: 'assets/partners/halkbank.png' }
+  ],
+
+  gallery: [
+    { src: 'assets/gallery/slayt5.jpg', alt: 'Özel Kars Hayat Hastanesi — tesis görünümü' },
+    { src: 'assets/gallery/slayt45.jpg', alt: 'Özel Kars Hayat Hastanesi — iç mekan' },
+    { src: 'assets/gallery/slayt51.jpg', alt: 'Özel Kars Hayat Hastanesi — hasta odası' }
+  ],
+
+  videos: [
+    {
+      title: '7/24 Acil Servis',
+      embed: 'https://www.youtube.com/embed/8lfMdiCtV6g',
+      thumb: 'assets/departments/acil-servis.jpg'
+    }
+  ],
+
+  quality: {
+    title: 'Kalite Yönetim Birimi',
+    intro: 'Hastanemizdeki kalite çalışmaları, yönetimin ve bölüm kalite sorumlularının desteği ile Kalite Geliştirme Birimi tarafından; Sağlık Bakanlığı Sağlıkta Kalite Standartları-Hastane doğrultusunda yürütülmektedir.',
+    areas: [
+      { title: 'Kurumsal Hizmetler', items: ['Kurumsal Yapı', 'Kalite Yönetimi', 'Doküman Yönetimi', 'Risk Yönetimi', 'Güvenlik Raporlama Sistemi', 'Acil Durum ve Afet Yönetimi', 'Eğitim Yönetimi', 'Sosyal Sorumluluk'] },
+      { title: 'Hasta ve Çalışan Odaklı Hizmetler', items: ['Hasta Deneyimi', 'Hizmete Erişim', 'Yaşam Sonu Hizmetler', 'Sağlıklı Çalışma Yaşamı'] },
+      { title: 'Sağlık Hizmetleri', items: ['Hasta Bakımı', 'İlaç Yönetimi', 'Enfeksiyonların Önlenmesi', 'Sterilizasyon Hizmetleri', 'Acil Servis', 'Ameliyathane', 'Yoğun Bakım Üniteleri', 'Doğum Hizmetleri', 'Laboratuvar Hizmetleri'] },
+      { title: 'Destek Hizmetler', items: ['Tesis Yönetimi', 'Otelcilik Hizmetleri', 'Bilgi Yönetim Sistemi', 'Malzeme ve Cihaz Yönetimi', 'Tıbbi Kayıt ve Arşiv', 'Atık Yönetimi'] },
+      { title: 'Gösterge Yönetimi', items: ['Göstergelerin İzlenmesi', 'Bölüm Bazlı Göstergeler', 'Klinik Bazlı Göstergeler'] }
+    ],
+    committees: [
+      'Acil Durumlar ve Afet Yönetimi Komitesi', 'Radyasyon Güvenliği Komitesi',
+      'Çalışan Sağlığı ve Güvenliği Komitesi', 'Eğitim Komitesi',
+      'Enfeksiyon Kontrol Komitesi', 'Hasta Güvenliği Komitesi',
+      'İlaç Komitesi', 'Temizlik Komitesi', 'Transfüzyon Takip Komitesi'
+    ],
+    notes: [
+      'Güvenlik Raporlama Sistemi ile istenmeyen olayların bildirilmesi ve önlenmesi sağlanmaktadır.',
+      'Gösterge Yönetimi Sistemi ile kalitenin sürekli geliştirilmesine katkı sağlanmaktadır.',
+      'Düzenli aralıklarla bina turları yapılarak fiziksel alan denetimleri gerçekleştirilmektedir.',
+      'Sağlıkta Kalite Standartları kapsamında yılda 2 defa özdeğerlendirme (iç denetim) yapılmaktadır.'
+    ]
+  },
+
+  companionRules: [
+    'Hasta ziyaretçilerinin kabul edilmesi, hastanemizde belirlenen usul ve esaslara uygun olarak ve hastaların huzur ve sükûnlarını bozacak fiil ve tutumlara sebebiyet vermeyecek şekilde gerçekleştirilmelidir.',
+    'Hasta ziyareti, hastanemizin belirlediği ziyaret saatleri (23:00–07:00 arası hariç) içinde yapılmaktadır.',
+    'Ziyaret süresi 10 dakika ile sınırlandırılmalı ve odada 2 kişiden fazla ziyaretçi bulunmamalıdır.',
+    'Hastane içinde cep telefonları sessiz modda kullanılmalıdır.',
+    'Ateş, öksürük veya bilinen enfeksiyon hastalığı olan kişiler ile 12 yaşından küçük çocuklar mümkün olduğunca ziyarete getirilmemelidir.',
+    'Doktorun izin vermediği özel durumlarda ve salgın varlığında ziyaret kısıtlaması getirilebilir.',
+    'Sağlık kuruluşları içinde sigara içilmesi yasaktır.',
+    'Hastanızın sağlığını korumak için dışarıdan yiyecek-içecek getirmeyiniz.',
+    'Topraklı çiçek ve buket çiçek hasta servislerine kabul edilmemektedir.',
+    'Hasta yatağına oturmamaya ve ekipmanlara dokunmamaya dikkat ediniz.',
+    'Ziyaret öncesi ve sonrası el hijyenine özen gösteriniz.',
+    'İzolasyon altındaki hastalarda sağlık personelinin talimatlarına uyunuz.',
+    'Ziyaret sırasında hasta ve yakınlarının mahremiyetine özen gösteriniz.'
+  ],
+
+  legal: {
+    kvkk: {
+      title: 'Kişisel Verilerin Korunması (KVKK)',
+      sections: [
+        { heading: '6698 Sayılı Kişisel Verilerin Korunması Kanunu Bilgilendirme ve Aydınlatma Metni', body: 'MEDİCALPORT HASTANESİ VE SAĞLIK HİZMETLERİ LTD. ŞTİ. olarak kişisel verilerinizin işlenmesine ve korunmasına azami özen gösteriyoruz. Kişisel Verilerin Korunması Kanunu, Sağlık Hizmetleri Temel Kanunu ve ilgili mevzuat uyarınca gerekli her türlü teknik ve idari tedbirler alınmaktadır.' },
+        { heading: 'Veri Sorumlusu', body: 'Örnek Mah. Ali Gaffar Okkan Bulvarı No:88/5, 36100 Merkez/KARS adresinde mukim MEDİCALPORT HASTANESİ VE SAĞLIK HİZMETLERİ LTD. ŞTİ. (Özel Kars Hayat Hastanesi), Kişisel Verilerin Korunması Kanununun 3. maddesinde tanımlanan veri sorumlusu sıfatıyla kişisel verilerinizi işlemektedir.' },
+        { heading: 'Kişisel Verilerin İşlenme Amaçları', body: 'Kişisel verileriniz; kamu sağlığının korunması, koruyucu hekimlik, tıbbi teşhis, tedavi ve bakım hizmetlerinin yürütülmesi, sağlık hizmetlerinin finansmanının planlanması, Sağlık Bakanlığı ve SGK ile bilgi paylaşımı, hasta haklarının korunması ve yasal yükümlülüklerin yerine getirilmesi amacıyla işlenmektedir.' },
+        { heading: 'Kişisel Verilerin Aktarılması', body: 'Kişisel verileriniz; kanunen yetkili kamu kurum ve kuruluşlarına, SGK\'ya, anlaşmalı kurumlara, hizmet alınan üçüncü kişilere ve yasal zorunluluk halinde ilgili mercilere aktarılabilmektedir.' },
+        { heading: 'Haklarınız', body: 'KVKK\'nın 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini isteme, silinmesini veya yok edilmesini isteme haklarına sahipsiniz.' },
+        { heading: 'Başvuru', body: 'KVKK kapsamındaki taleplerinizi info@karshayathastanesi.com adresine veya Örnek Mah. Ali Gaffar Okkan Bulvarı No:88/5, Merkez/Kars adresine yazılı olarak iletebilirsiniz.' }
+      ]
+    },
+    yasal: {
+      title: 'Yasal Uyarı',
+      sections: [
+        { body: 'Aşağıdaki maddelerde www.karshayathastanesi.com web sitesini ziyaret eden kişilere yönelik kurallar açıklanmaktadır. Bu web sitesi Özel Kars Hayat Hastanesi\'ne aittir ve siteyi ziyaret eden kullanıcılar aşağıdaki koşulları kabul etmiş sayılacaktır.' },
+        { body: 'Kullanıcılar bu sitede yer alan bilgi ve dokümanları sadece bilgi edinmek amacıyla kullanabilir. Burada mevcut olan bilgiler Özel Kars Hayat Hastanesi\'nden önceden yazılı izni alınmaksızın kısmen veya tamamen kopya edilemez, dağıtılamaz, çoğaltılamaz veya ticari amaçla kullanılamaz.' },
+        { body: 'Özel Kars Hayat Hastanesi web sitesinde yayınlanmış bilgiler ya da bilgilere dayanılarak yapılan işlemlerden veya siteye ulaşılamamasından doğan zarar ve kayıplardan dolayı hiçbir şekilde sorumluluk kabul etmez. Sitede yer alan bilgiler ışığında verilecek her türlü karar ile ilgili tüm sorumluluk, bu siteyi ziyaret eden kişiye aittir.' },
+        { body: 'Bu sitede bulunan bilgi veya ifadelerin telif hakkı Özel Kars Hayat Hastanesi\'ne aittir. Özel Kars Hayat Hastanesi\'nin yazılı izni olmaksızın kullanılamaz. İhtilaflarda Türkçe Kullanım Şartları metni esas alınacaktır.' },
+        { body: 'Sitede yer alan bilgiler genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz. Tanı ve tedavi için mutlaka bir sağlık profesyoneline başvurunuz.' }
+      ]
+    }
+  },
+
+  links: {
+    randevu: 'http://195.175.92.206:3634/randevu',
+    esonuc: 'http://195.175.92.206:3634/labsonuc/patient_information.php',
+    facebook: 'https://www.facebook.com/',
+    youtube: 'https://www.youtube.com/@OzelKarsHayatHastanesi'
   },
 
   faq: [
